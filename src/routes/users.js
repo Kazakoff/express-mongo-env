@@ -1,7 +1,7 @@
 const express = require('express');
 const db = require('../db/connection');
 
-const users = db.get('users');
+const users = db.get('user');
 
 const router = express.Router();
 

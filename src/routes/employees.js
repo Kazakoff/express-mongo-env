@@ -18,6 +18,16 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+/* Get all distinct job values */
+router.get('/jobs', async (req, res, next) => {
+  try {
+    const jobs = await employees.distinct('job');
+    res.json(jobs);
+  } catch (error) {
+    next(error);
+  }
+});
+
 /* Get a specific employee */
 router.get('/:id', async (req, res, next) => {
   try {

@@ -16,6 +16,11 @@ function errorHandler(err, req, res) {
 function timeSign(req, res, next) {
   console.log(new Date().toISOString());
   res.set('Accepted---At', new Date().toISOString());
+  const start = Date.now();
+  res.on('finish', () => {
+    const duration = Date.now() - start;
+    res.set('X-Response-Time', `${duration}ms`);
+  });
   next();
 }
 

@@ -13,16 +13,16 @@ function errorHandler(err, req, res) {
 }
 
 
-function timeSign(req, res, next) {
-  const startedAt = new Date();
-  res.set('Accepted---At', startedAt.toISOString());
-  const start = Date.now();
-  res.on('finish', () => {
-    const duration = Date.now() - start;
-    console.log(`Request completed in ${duration}ms`);
-  });
-  next();
-}
+// function timeSign(req, res, next) {
+//   const startedAt = new Date();
+//   res.set('Accepted---At', startedAt.toISOString());
+//   const start = Date.now();
+//   res.on('finish', () => {
+//     const duration = Date.now() - start;
+//     console.log(`Request completed in ${duration}ms`);
+//   });
+//   next();
+// }
 
 module.exports = {
   notFound,

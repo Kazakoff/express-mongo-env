@@ -12,12 +12,11 @@ function errorHandler(err, req, res) {
   });
 }
 
-
- function timeSign(req, res, next) {
-   const startedAt = new Date();
-   res.set('Accepted---At', startedAt.toISOString());
-   next();
- }
+function timeSign(req, res, next) {
+  const startedAt = new Date();
+  res.set('Accepted---At', startedAt.toISOString());
+  next();
+}
 
 module.exports = {
   notFound,
